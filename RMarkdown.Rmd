@@ -159,28 +159,3 @@ cm_final <- table(Predicted = final_predictions, Actual = test_data$classe)
 final_accuracy <- sum(diag(cm_final)) / sum(cm_final)
 cat("Accuracy on the test set:", round(final_accuracy, 4), "\n")
 ```
-
-<!-- # Quiz -->
-<!-- ```{r echo=T, warning=F, message=F} -->
-<!-- data_quiz <- read.csv("./data/pml-testing.csv") -->
-
-<!-- # Ensure the response variable in train_data is a factor -->
-<!-- train_data$classe <- as.factor(train_data$classe) -->
-
-<!-- # Get the names of the variables used in the model (excluding the response variable) -->
-<!-- training_vars <- setdiff(names(train_data), "classe") -->
-
-<!-- # Filter `data_quiz` to have only the same variables -->
-<!-- filtered_data_quiz <- data_quiz[, training_vars, drop = FALSE] -->
-
-<!-- # Predict on `data_quiz` -->
-<!-- data_quiz$classe <- predict(final_model, newdata = filtered_data_quiz) -->
-<!-- ``` -->
-
-<!-- ```{r echo=T, warning=F, message=F} -->
-<!-- data_quiz %>% -->
-<!--   count(classe) -->
-<!-- ``` -->
-
-
-
